@@ -9,9 +9,9 @@ from config import *
 # from config import settings
 # from helpers.db_sqlalchemy import get_db, Base, engine
 # from helpers.db_sqlalchemy import get_db, engine
-from helpers.db_sqlmodel import create_db_and_tables
+# from helpers.db_sqlmodel import create_db_and_tables
 # from .routes.auth import router as auth_router
-from routes.auth import router as auth_router
+# from routes.auth import router as auth_router
 
 
 # app = FastAPI()
@@ -54,7 +54,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 # Include the auth router
-app.include_router(auth_router, prefix="/auth", tags=["auth"])
+# app.include_router(auth_router, prefix="/auth", tags=["auth"])
 
 @lru_cache
 def get_settings():
