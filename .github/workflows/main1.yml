@@ -28,13 +28,13 @@ jobs:
           # python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # - name: Deploy with Uvicorn
-      #   run: |
-      #     uvicorn main:app --host 0.0.0.0 --port 8000
-
-      - name: Run FastAPI Server (Test)  # ✅ Start FastAPI to ensure it runs properly
+      - name: Deploy with Uvicorn
         run: |
-          nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
+          uvicorn main:app --host 0.0.0.0 --port 8000 &
+
+      # - name: Run FastAPI Server (Test)  # ✅ Start FastAPI to ensure it runs properly
+      #   run: |
+      #     nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
 
       - name: Check Running Services  # ✅ Ensure the app is running
         run: |
@@ -43,3 +43,7 @@ jobs:
 
       - name: Deploy to Production (Optional)  # ✅ Add deployment steps if needed
         run: echo "Deployment completed successfully!"
+
+      - name: Show Deployed URL
+        run: echo "Your FastAPI app is available at https://marut-tandel.github.io/fast_api/.onrender.com"
+
