@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 from config import *
 # from config import Settings
 # from config import settings
-from helpers.db_sqlalchemy import get_db, Base, engine
+# from helpers.db_sqlalchemy import get_db, Base, engine
 # from helpers.db_sqlalchemy import get_db, engine
 from helpers.db_sqlmodel import create_db_and_tables
 # from .routes.auth import router as auth_router
@@ -32,7 +32,7 @@ from routes.auth import router as auth_router
 async def lifespan(app: FastAPI):
     # Perform startup actions, like connecting to a database
     print("App is starting up")
-    Base.metadata.create_all(bind=engine)  # Create the tables in the database
+    # Base.metadata.create_all(bind=engine)  # Create the tables in the database
     yield
     # Perform cleanup actions, like closing database connections
     print("App is shutting down")
