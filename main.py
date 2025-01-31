@@ -111,3 +111,8 @@ async def info(settings: Annotated[Settings, Depends(get_settings)]):
 
 # -w 4 specifies the number of worker processes to handle requests.
 # -k uvicorn.workers.UvicornWorker specifies using Uvicorn's worker class to handle ASGI applications.
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
